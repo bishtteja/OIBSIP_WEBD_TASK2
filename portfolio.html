@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tejaswi Bisht | Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #0f172a, #1e293b);
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(15, 23, 42, 0.9);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    header h2 {
+      background: linear-gradient(to right, #facc15, #a78bfa, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 140px 80px 80px;
+      min-height: 100vh;
+    }
+
+    .hero-text h1 {
+      font-size: 55px;
+      font-weight: 700;
+      background: linear-gradient(to right, #facc15, #a78bfa, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: slideIn 1s ease;
+    }
+
+    .hero-text h2 {
+      font-size: 32px;
+      color: #38bdf8;
+      margin: 10px 0;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero-text p {
+      max-width: 500px;
+      margin: 20px 0;
+      color: #cbd5e1;
+      animation: fadeIn 2.5s ease;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #38bdf8, #a78bfa);
+      color: white;
+      box-shadow: 0 4px 10px rgba(56,189,248,0.5);
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    .btn-outline:hover {
+      background: #38bdf8;
+      color: white;
+    }
+
+    .hero img {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      border: 5px solid #38bdf8;
+      object-fit: cover;
+      box-shadow: 0 0 30px #38bdf8;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    section {
+      padding: 80px 60px;
+    }
+
+    h2.section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      color: #38bdf8;
+      position: relative;
+    }
+
+    h2.section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #a78bfa;
+      margin: 10px auto 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f172a;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
+    /* ===== Skills Section ===== */
+#skills {
+  padding: 80px 20px;
+  background:  linear-gradient(120deg, #10f172a, #1e293b);
+  text-align: center;
+}
+
+#skills .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #38bdf8;
+}
+
+.skills-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skill {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.skill p {
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+.progress-bar {
+  background: #333;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.progress {
+  background: linear-gradient(90deg, #38bdf8, #50bae7);
+  height: 25px;
+  line-height: 25px;
+  text-align: right;
+  padding-right: 10px;
+  border-radius: 25px;
+  color: #000;
+  font-weight: bold;
+  transition: width 1s ease;
+}
+.projects-section {
+  padding: 50px;
+  background: #0f172a; /* Dark background */
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+.project-card h3 {
+  color: #facc15;
+  margin-bottom: 10px;
+}
+
+.project-card h4 {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #38bdf8;
+}
+
+.project-card ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.tags {
+  margin-top: 15px;
+}
+
+.tags span {
+  display: inline-block;
+  background: #334155;
+  color: #38bdf8;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 3px;
+  font-size: 0.9rem;
+}
+    /* Animations */
+    @keyframes slideIn {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+  </style>
+</head>
+<body>
+    
+
+  <header>
+    <h2>Tejaswi</h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+     <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm Tejaswi</h1>
+      <h2>CSE Student | Problem Solver | Tech Enthusiast | Frontend Developer</h2>
+      <p>pre-final year student focusing on front-end development and C++ programming.</p>
+      <button class="btn btn-primary"><i class="fas fa-handshake"></i>resume</button>
+    </div>
+    <div>
+      <img src="image.jpg" alt="Tejaswi">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+       Hi, I'm Tejaswi, a pre-final year Computer Science Engineering student passionate about technology and creativity. 
+    I enjoy building clean and user-friendly web applications, and I'm currently focusing on improving my front-end development and C++ programming skills.  
+    Apart from coding, I’m a good communicator and a quick learner, always excited to explore new opportunities and challenges.
+    </p>
+   <section id="projects" class="projects-section">
+  <h2 class="section-title">Education</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>Bachelor of Technology in Computer Science Engineering</h3>
+      <p>Graphic Era University, 2022-Present</p>
+      <p>6.5 CGPA</p>
+    </div>
+    <div class="project-card">
+      <h3>Senior Secondary Education</h3>
+      <p>BVS, Baurai,Tehri Garhwal, 2021</p>
+      <p>84%</p>
+  </div>
+    <div class="project-card">
+      <h3>Secondary Education</h3>
+      <p>SBBVS, Public School, Paurikhal,Tehri Garhwal, 2019</p>
+      <p>83%</p>
+    </div>
+</section>
+
+ <section id="projects" class="projects-section">
+  <h2 class="section-title">Events</h2>
+  <div class="projects-container">
+  <div class="project-card">
+      <h3>Technical Workshop on Web Development</h3>
+      <p>Graphic Era University, 2023</p>
+      <p>Conducted a workshop on modern web development practices.</p>
+    </div>
+    <div class="project-card">
+      <h3>Annual Tech Fest</h3>
+      <p>Graphic Era University, 2022</p>
+      <p>Participated in the annual tech fest showcasing innovative projects.</p>
+    </div>
+    <div class="project-card">
+      <h3>Inter-College Coding Competition</h3>
+      <p>Graphic Era University, 2021</p>
+      <p>Secured 2nd place in a coding competition among various colleges.</p>
+    </div>
+    </div>
+
+  <section id="skills" style="padding: 50px ; text-align: center;">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-wrapper">
+        <div class="skill">
+          <i class="devicon-html5-plain colored" style="font-size: 24px; vertical-align: middle;"></i>
+        <p>HTML</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;">90%</div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <p>CSS</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 80%;">80%</div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <p>JavaScript</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;">70%</div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <p>C++</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 65%;">65%</div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <p>Communication</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 85%;">85%</div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <p>Team Management</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 80%;">80%</div>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+  </section>
+
+<section id="projects" class="projects-section">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-container">
+
+  
+    <div class="project-card">
+      <h3>calculator</h3>
+      <p>A simple calculator application built with HTML, CSS, and JavaScript.</p>
+      <h4>Key Features:</h4>
+      <ul>
+        <li>Basic arithmetic operations</li>
+        <li>Responsive design</li>
+        <li>High accuracy</li>
+      </ul>
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Landing Page</h3>
+      <p>A responsive landing page built with HTML, CSS, and JavaScript to showcase a product or service.</p>
+      <h4>Key Features:</h4>
+      <ul>
+        <li>Responsive design</li>
+        <li>Interactive elements</li>
+        <li>SEO optimized</li>
+      </ul>
+      <div class="tags">
+        <span>JavaScript</span>
+        <span>HTML</span>
+        <span>CSS</span>
+      </div>
+    </div>
+
+  
+    <div class="project-card">
+      <h3>Drowsiness detection system</h3>
+      <p>Python-based application using OpenCV for real-time drowsiness detection through facial landmark analysis.</p>
+      <h4>Key Features:</h4>
+      <ul>
+        <li>Real-time monitoring</li>
+        <li>Facial landmark detection</li>
+        <li>Panoramic output</li>
+      </ul>
+      <div class="tags">
+        <span>Python</span>
+        <span>OpenCV</span>
+        <span>dilib</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <p style="text-align:center;">📧 Email: bishttejaswi90@gmail.com </p>
+    <p style="text-align:center;">💼 LinkedIn: linkedin.com/in/tejaswi-bisht</p>
+    <p style="text-align:center;">📞 Phone: 7302278456</p>
+    <!-- Contact Section -->
+  <p style="margin-bottom: 30px; color: #cbd5e1; text-align: center;">Have a question or want to work together? Drop me a message below!</p>
+
+  <form style="max-width: 600px; margin: auto; background: #1e293b; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+    
+    <div style="margin-bottom: 20px; text-align: left;">
+      <label for="name" style="display: block; margin-bottom: 6px; font-weight: bold;">Name</label>
+      <input type="text" id="name" name="name" required 
+        style="width: 100%; padding: 12px; border: none; border-radius: 8px; background: #334155; color: #fff;">
+    </div>
+
+    <div style="margin-bottom: 20px; text-align: left;">
+      <label for="email" style="display: block; margin-bottom: 6px; font-weight: bold;">Email</label>
+      <input type="email" id="email" name="email" required 
+        style="width: 100%; padding: 12px; border: none; border-radius: 8px; background: #334155; color: #fff;">
+    </div>
+
+    <div style="margin-bottom: 20px; text-align: left;">
+      <label for="message" style="display: block; margin-bottom: 6px; font-weight: bold;">Message</label>
+      <textarea id="message" name="message" rows="5" required
+        style="width: 100%; padding: 12px; border: none; border-radius: 8px; background: #334155; color: #fff;"></textarea>
+    </div>
+
+    <button type="submit" 
+      style="padding: 12px 25px; background: linear-gradient(90deg,#6366f1,#06b6d4); border: none; border-radius: 8px; color: #fff; font-size: 1rem; cursor: pointer; transition: 0.3s;">
+      Send Message
+    </button>
+  </form>
+</section>
+
+  </section>
+
+  <footer>
+    © 2025 Tejaswi | All Rights Reserved
+  </footer>
+
+</body>
+</html>
